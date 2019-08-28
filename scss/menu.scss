@@ -1,0 +1,300 @@
+@import 'config';
+
+//menu button
+.menu-btn{
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top:35px;
+    cursor:pointer;
+    @include easeOut;
+    
+
+    .btn-line {
+        width: 28px;
+        height:3px;
+        margin:0 0 5px 0;
+        background:#fff;
+        @include easeOut;
+
+        
+    }
+
+    
+    //& takes the class above (in this case menu-btn) and places it where the & is so it would be menu-btn.close
+    //rotate into x with menu lines
+    &.close {
+        transform: rotate(180deg);
+
+        //changing the button lines 
+        .btn-line{
+
+            //the first div with the class btn-line
+            &:nth-child(1){
+                background:red;
+                transform:rotate(45deg) translate(5px,5px);
+
+                
+            }
+             //the second div with the class btn-line
+             &:nth-child(2){
+                opacity: 0;
+            }
+            &:nth-child(3){
+                background:red;
+                transform:rotate(-45deg) translate(7px,-6px);
+            }
+            &:hover{
+                @include easeOut;
+                background: $secondary-color;
+            }
+
+
+        }
+
+    }
+}
+
+//menu Overlay
+.menu {
+    position: fixed;
+    top:0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden;
+    
+
+    &.show {
+        visibility: visible;
+    }
+//stating things I want both sides of the overlaty to have
+    &-branding,&-nav {
+        
+        // flex-flow: column wrap;
+        // align-items: center;
+        // justify-content: center; //both vertically and horizontally to center
+        float: left;
+        height: 100vh;
+        overflow:hidden;
+    }
+
+    //navigation through your website (right side)
+    &-nav {
+        margin:0;
+        padding:0;
+        //changes the size of the nav to branding ratio to 25% 75%
+        width: 32%;
+        //darken darkens the color
+        background:darken($primary-color, 5);
+        //gets rid of bullet points
+        display: flex;
+        list-style: none;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center; //both vertically and horizontally to center
+        //translation of the menu to go down
+        //100% pushes the item down 100% of the screen so -100% allows you to come in from the top
+        transform:translate3d(0,-100%,0);
+        @include easeOut;
+
+        &.show {
+            //slide in from top
+            transform:translate3d(0,0,0)
+        }
+    }
+
+    //your face side/branding side(left Side) maybe place what you are good at there ?
+    &-branding{
+        background:$primary-color;
+        @include easeOut;
+        transform:translate3d(0,100%,0);
+        width: 68%;
+        // creating a grid to place items
+        display:grid;
+        grid-gap: 10px;
+        grid-template-areas: 
+        'me me me'
+        'language1 language2 language3'
+        'language4 language5 language6';
+        grid-template-columns:repeat(3,1fr);
+        &.show {
+            //slide in from top
+            transform:translate3d(0,0,0)
+        }
+
+        .portrait{
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background:url(../img/me.jpg);
+            border-radius: 50%;
+            border:solid 3px $secondary-color;
+        }
+    }
+
+    .me{
+        grid-area: me;
+        background:lighten($primary-color, $amount: 8);
+        border-bottom:$secondary-color 5px solid;
+        &:hover{
+            color: $secondary-color;
+            @include easeOut;
+            span{
+                color:#fff;
+            }
+        }
+        h1{
+            font-size: 2rem;           
+        }
+    
+    
+    }
+
+    .language-1{
+        grid-area: language1;
+        .language{
+            border-bottom:#307bbb 5px solid;
+            &:hover{
+                color: #307bbb;
+                @include easeOut;
+            }
+           
+        }
+       
+    }
+
+    .language-2{
+        grid-area: language2;
+
+        .language{
+            border-bottom:orange 5px solid;
+
+            &:hover{
+                color:lighten(orange,8);
+                @include easeOut;
+            }
+        }
+        
+    }
+
+    .language-3{
+        grid-area: language3;
+
+        .language{
+            border-bottom:green 5px solid;
+
+            &:hover{
+                color:lighten(green,8);
+                @include easeOut;
+            }
+        }
+    }
+    
+    .language-4{
+        grid-area: language4;
+        .language{
+            border-bottom:#c6ff00 5px solid;
+
+            &:hover{
+                color: lighten(#c6ff00,8);
+                @include easeOut;
+            }
+        }
+    }
+
+    .language-5{
+        grid-area: language5;
+        .language{
+            border-bottom:#5283a2 5px solid;
+
+            &:hover{
+                color: lighten(#5283a2,8);
+                @include easeOut;
+            }
+        }
+    }
+
+    .language-6{
+        grid-area: language6;
+        .language{
+            border-bottom:#d175ff 5px solid;
+
+            &:hover{
+                color:#d175ff;
+                @include easeOut;
+            }
+        }
+    }
+    .language {
+        padding: 0.5rem;
+        // border-bottom:#307bbb 5px solid;
+        display: flex;
+        list-style: none;
+        flex-flow:column;
+        align-items: center;
+        justify-content: center;
+        
+        //background color of each language
+        &:hover{
+        //     changes the size of the item when hovered
+        //     padding:0.5rem 1.5;
+        background:lighten($primary-color, $amount: 8);
+        //     color: set-text-color($secondary-color);
+            @include easeOut;
+        }
+    }
+    .language-img{
+        width: 100px;
+        height: 100px;
+        
+    }
+
+    .nav-item{
+        transform: translate3d(600px,0,0);
+        @include easeOut;
+
+        &.show {
+            //slide in from right
+            transform:translate3d(0,0,0)
+        }
+
+        //inside the links coloring
+        &.current > a {
+            color: $secondary-color;
+        }
+
+    }
+    //navigation links
+    .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color:set-text-color($primary-color);
+        text-decoration: none;
+        @include easeOut;
+        //on hover 
+        &:hover{
+            color:$secondary-color;
+        }
+    }
+    
+
+}
+
+//size of image for work sites
+.work-img-height{
+    height: 100px;
+    width: 100px;
+}
+
+//delay for each navigation item to slide right every .1s
+//scss uses @for, also instead of a variable, it uses #{x} with a variable name you want, in this case x
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.1s;
+    }
+}
+

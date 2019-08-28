@@ -1,0 +1,304 @@
+@import 'config';
+@import 'menu';
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @include background;
+    background: $primary-color;
+    color:set-text-color($primary-color);
+    height: 100%;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    overflow: auto;
+   
+}
+
+//normal headings
+h1, h2, h3 {
+    margin:0;
+    font-weight: 400;
+// My name heading
+    &.lg-heading {
+        font-size: 6rem;
+    }
+// heading underneath the main title
+    &.sm-heading{
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($color:$primary-color, $amount: 2),0.5);
+    }
+}
+//links
+a {
+    color:#fff;
+    text-decoration: none;
+}
+
+header {
+    position:fixed;
+    z-index: 5;
+    width: 100%;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+//styling for everything thats not in the header
+main {
+    padding: 4rem;
+    // used to be height: 100%; 
+    //changed to calc to make the footer stick to the bottom of the screen
+    min-height: calc(100vh - 60px);
+
+    //for the hovering of the icons inside a main tag
+    .icons {
+        margin-top:1rem ;
+
+        a {
+            padding: 0.4rem;
+
+            //for while it hovers
+            &:hover {// NOTE SCSS &:hover==a:hover css
+                color: $secondary-color;
+                //when using mixin do @include to access a mixin
+                @include easeOut();
+            }
+        }
+    }
+    &#home {
+        overflow:hidden;
+        h1 {
+            margin-top:20vh;
+        }
+    }
+
+}
+
+//css for the about me page
+.about-info {
+    display:grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3,1fr);
+}
+
+.bio-img {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 25%;
+    height: 80%;
+    width: 80%;
+    border: $secondary-color 3px solid;
+}
+.bio{
+    grid-area: bio;
+    font-size: 1.5rem;
+
+}
+.job-1{
+    grid-area: job1;
+}
+.job-2{
+    grid-area: job2;
+}
+.job-3{
+    grid-area: job3;
+}
+//background for each job 
+.job {
+    background:lighten($primary-color, $amount: 8);
+    padding: 0.5rem;
+    border-bottom:$secondary-color 5px solid;
+}
+
+//about me moving bars
+//all the skills in the about me page
+.skills{
+    *{
+        font-family: sans-serif;
+        list-style: none;
+        padding: 0;
+    }
+    width: 500px;
+    margin: 60px auto;
+    color:#fff;
+    &li{
+        margin:20px 0;
+    }
+}
+//ratings for each skill
+
+
+
+//starting of my work page
+.projects{
+    display: grid;
+    grid-template-areas: repeat(3, 1fr);
+    grid-gap: 0.7rem;
+
+    //sets the background and hover of all images inside of projects
+    img {
+        width: 100%;
+        height: 250px;
+        border: 3px #fff solid;
+
+        &:hover{
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+//navigation bar on other proects
+.work-nav{
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+      }
+      
+      li {
+        float: left;
+        padding: 5px; 
+        margin:0 0 10px 10px;
+      }
+
+        li a{
+            display: block;
+           @include easeOut;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+            &:hover{
+                background-color: lighten($color:#eece1a, $amount: 10);
+                color:set-text-color($secondary-color)
+            }
+        }
+      
+}
+
+
+
+//Contact Page
+.boxes{
+    display: inline;
+    justify-content: space-evenly;
+    align-items: center;
+
+    div{
+        font-size:1rem;
+        display: inline-block;
+        border:3px #fff solid;
+        padding: 1rem 2rem;
+        margin-bottom:0.3rem;
+        @include easeOut;
+
+        &:hover{
+            //changes the size of the item when hovered
+            padding:0.5rem 1.5;
+            background:$secondary-color;
+            color: set-text-color($secondary-color);
+            span{
+                color: set-text-color($secondary-color);
+            }
+        }
+    }
+}
+
+//Resume Page
+.contact-me{
+    grid-area: contact-me;
+    text-align: center;
+    
+}
+
+.resume-outline{
+    display:grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'nav frame'
+    'nav frame'
+    'contact-me contact-me';
+    grid-template-columns:30% 70%;
+}
+.frame-outline{
+    grid-area: frame;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+   
+    
+    .frame{
+        min-width: 80%;
+        min-height: 550px;
+        
+    }
+}
+.resume-nav{
+    grid-area: nav;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    .resume-options{
+        margin-bottom: 3rem;
+    }
+}
+
+//skills page
+
+
+
+//buttons under pictures styles
+
+.btn{
+    display:block;
+    padding: 0.5rem 1rem;
+    border:0;
+    margin-bottom:0.3rem;
+
+    &:hover{
+        background: $secondary-color;
+        color:set-text-color($secondary-color);
+    }
+}
+
+//extending btn class into both light and dark so the styles would work
+.btn-dark{
+    @extend .btn;
+    background: darken($primary-color, $amount: 50);
+    color:#fff;
+    @include easeOut;
+}
+
+.btn-light{
+    @extend .btn;
+    background: lighten($primary-color, $amount: 50);
+    color:#333;
+    @include easeOut;
+}
+
+
+
+#main-footer {
+    text-align: center;
+    padding:1rem;
+    background: darken($primary-color, $amount: 10);
+    color:set-text-color($primary-color);
+    height: 10vh;
+}
+
+@import 'mobile';

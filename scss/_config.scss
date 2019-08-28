@@ -1,0 +1,75 @@
+$primary-color:#444;//#444
+$secondary-color:#eece1a;
+$text-color:#77ddff;
+$show-home-image:true;
+$home-image:url(../img/desktopimg1.jpg) no-repeat center center fixed;
+$background-opacity:0.9;
+
+//#00c0ff/#77ddff;
+// this will make it so if we have padding, it will not effect the hight or with of the box model
+
+@mixin easeOut{
+    transition: all 1.0s ease-out;
+}
+//mixin for the backround to have an opacity
+@mixin background {
+    //if the background image is showing 
+    @if $show-home-image {
+        &#bg-img{
+            background: $home-image;
+            background-position: center;
+             background-repeat: no-repeat;
+            background-size: cover;
+
+            .overlay {
+            position: fixed;
+            top:0;
+            right:0;
+            width: 100%;
+            height: 100%;
+            background: rgba($primary-color, $background-opacity);
+            z-index: -10;
+            }
+            }
+        }
+      
+    }
+
+    //set Text Color (color is background color
+    @function set-text-color($color){
+        @if (lightness($color) > 40) {
+            @return #000;
+        }@else{
+            @return #fff;
+        }
+
+    }
+
+    //Media Query Mixins
+
+    @mixin mediaSm {
+        @media screen and (max-width:500px) {
+            @content;
+        }
+    }
+
+    //medium size screen
+    @mixin mediaMd {
+        @media screen and (max-width:768px) {
+            @content;
+        }
+    }
+
+    //large size screen if its between max and min it will aplly 
+    @mixin mediaLg {
+        @media screen and (max-width:1170px) and (min-width:769px){
+            @content;
+        }
+    }
+
+    //Extra Large size screen
+    @mixin mediaXl {
+        @media screen and (min-width:1171px){
+            @content;
+        }
+    }
