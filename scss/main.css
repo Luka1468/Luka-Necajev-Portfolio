@@ -547,7 +547,7 @@ main#home h1 {
   display: inline-block;
   border: 3px #fff solid;
   padding: 1rem 2rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
   -webkit-transition: all 1.0s ease-out;
   transition: all 1.0s ease-out;
 }

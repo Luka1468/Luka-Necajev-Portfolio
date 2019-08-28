@@ -196,14 +196,16 @@ main {
     display: inline;
     justify-content: space-evenly;
     align-items: center;
+   
 
     div{
         font-size:1rem;
         display: inline-block;
         border:3px #fff solid;
         padding: 1rem 2rem;
-        margin-bottom:0.3rem;
+        margin-bottom:1rem;
         @include easeOut;
+        
 
         &:hover{
             //changes the size of the item when hovered
