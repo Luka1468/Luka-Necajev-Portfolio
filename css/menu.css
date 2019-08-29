@@ -102,9 +102,7 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-      grid-template-areas: 'me me me'
- 'language1 language2 language3'
- 'language4 language5 language6';
+      grid-template-areas: 'me me me' 'language1 language2 language3' 'language4 language5 language6';
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
