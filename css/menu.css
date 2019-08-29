@@ -115,8 +115,8 @@
 .menu-branding .portrait {
   width: 100px;
   height: 100px;
-  background-size: contain;
-  background: url(../img/me2.jpg);
+  background-size: cover;
+  background: url(../img/me.jpg);
   border-radius: 50%;
   border: solid 3px #eece1a;
 }
