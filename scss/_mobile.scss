@@ -76,6 +76,12 @@
         grid-template-columns: 1fr;
     }
 
+    //bio image
+    .bio-img{
+        width: 60%;
+        height: 60%
+    }
+
     //within projects, this will change how many will be shown on how big of the screen
     .projects {
         grid-template-columns: repeat(2,1fr);
