@@ -17,6 +17,8 @@
 
 //tablet/small laptops
 @include mediaMd {
+
+    //making things work with a smaller screen
     main {
         align-items: center;
         text-align: center;
@@ -32,7 +34,8 @@
             display: hidden;
         }
     }
-//setting both the menu nav and branding nav to be 100% of the screen and to take away the attributes placed before
+    //navigation page
+    //setting both the menu nav and branding nav to be 100% of the screen and to take away the attributes placed before
     ul.menu-nav,div.menu-branding{
         float:none;
         width: 100%;
@@ -77,6 +80,22 @@
     .projects {
         grid-template-columns: repeat(2,1fr);
     }
+
+    //Resume Page
+    //changing the look so that the resume page is now single rows
+    .resume-outline{
+        grid-template-areas: 
+        'frame'
+        'frame'
+        'nav'
+        'nav';
+        grid-template-columns: 1fr;
+
+    }
+    
+    
+
+
 }
 
 //cell phone
