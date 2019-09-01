@@ -431,8 +431,8 @@ main#home h1 {
   grid-area: bioimage;
   margin: auto;
   border-radius: 25%;
-  height: 80%;
-  width: 80%;
+  height: 60%;
+  width: 50%;
   border: #eece1a 3px solid;
 }
 
@@ -653,6 +653,10 @@ main#home h1 {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
+  .bio-img {
+    width: 50%;
+    height: 60%;
+  }
 }
 
 @media screen and (max-width: 1170px) and (min-width: 769px) {
@@ -707,8 +711,12 @@ main#home h1 {
         grid-template-columns: 1fr;
   }
   .bio-img {
-    width: 60%;
-    height: 60%;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #eece1a 3px solid;
   }
   .projects {
     -ms-grid-columns: (1fr)[2];

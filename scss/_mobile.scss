@@ -84,8 +84,10 @@
 
     //bio image
     .bio-img{
-        width: 60%;
-        height: 60%
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
     }
 
     //within projects, this will change how many will be shown on how big of the screen
