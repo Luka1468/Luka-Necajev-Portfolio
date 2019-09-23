@@ -60,16 +60,22 @@ $background-opacity:0.9;
         }
     }
 
+    @mixin inBetween{
+        @media screen and (max-width:1369px) and (min-width:769px){
+            @content;
+        }
+    }
+
     //large size screen if its between max and min it will aplly 
     @mixin mediaLg {
-        @media screen and (max-width:1170px) and (min-width:769px){
+        @media screen and (max-width:1370px) and (min-width:1000px){
             @content;
         }
     }
 
     //Extra Large size screen
     @mixin mediaXl {
-        @media screen and (min-width:1171px){
+        @media screen and (min-width:1371px){
             @content;
         }
     }

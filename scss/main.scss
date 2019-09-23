@@ -32,6 +32,14 @@ h1, h2, h3 {
         padding: 0.2rem 1rem;
         background: rgba(lighten($color:$primary-color, $amount: 2),0.5);
     }
+    //navigation heading for work page
+    &.sm-heading-work{
+        margin-bottom: 1rem;
+        padding: 0.2rem 1rem;
+        color: #fff;
+        font-size: 1.5rem; 
+    }
+
 }
 //links
 a {
