@@ -102,7 +102,9 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-      grid-template-areas: 'me me me' 'language1 language2 language3' 'language4 language5 language6';
+      grid-template-areas: 'me me me'
+ 'language1 language2 language3'
+ 'language4 language5 language6';
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
@@ -427,7 +429,8 @@ main#home h1 {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
-      grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+      grid-template-areas: 'bioimage bio bio'
+ 'job1 job2 job3';
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
@@ -581,7 +584,9 @@ main#home h1 {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
-      grid-template-areas: 'nav frame' 'nav frame' 'contact-me contact-me';
+      grid-template-areas: 'nav frame'
+ 'nav frame'
+ 'contact-me contact-me';
   -ms-grid-columns: 30% 70%;
       grid-template-columns: 30% 70%;
 }
@@ -728,7 +733,11 @@ main#home h1 {
     height: 150px;
   }
   .about-info {
-        grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+        grid-template-areas: 'bioimage'
+ 'bio'
+ 'job1'
+ 'job2'
+ 'job3';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -747,7 +756,10 @@ main#home h1 {
         grid-template-columns: repeat(2, 1fr);
   }
   .resume-outline {
-        grid-template-areas: 'frame' 'frame' 'nav' 'nav';
+        grid-template-areas: 'frame'
+ 'frame'
+ 'nav'
+ 'nav';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
